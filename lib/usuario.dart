@@ -24,7 +24,7 @@ class Usuario{
   set senha(String? senha) => _senha = senha;
   set codigo(int? codigo) => _codigo = codigo;
 
-  //exemplo forma classica
+  //exemplo forma classica de criar
   set login(String? login){
     _login = login;
   }
