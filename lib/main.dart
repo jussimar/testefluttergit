@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import './estilos/estilos.dart';
 
 import 'usuario.dart';
+import 'restaurante.dart';
+import 'tipo.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -19,6 +22,20 @@ class MyApp extends StatelessWidget {
       senha: '@senhaforte123'
     );
 
+    Tipo t = Tipo(
+      nome: 'Japonês',
+      codigo: 1
+    );
+
+    Restaurante r = Restaurante(
+      nome: 'Japa novo!',
+      codigo: 152,
+      proprietario: u,
+      cutinaria: t,
+      latitude: 0,
+      longitude: 0
+    );
+
     return MaterialApp(
       home:Scaffold(
         appBar: AppBar(
@@ -31,10 +48,19 @@ class MyApp extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Text('Usuário'),
               Text("Nome: ${u.nome}", style: EstilosApp.texto),
               Text("Código: ${u.codigo}", style: EstilosApp.texto),
               Text("Login: ${u.login}", style: EstilosApp.texto),
-              Text("Senha: ${u.senha}", style: EstilosApp.texto)
+              Text("Senha: ${u.senha}", style: EstilosApp.texto),
+
+              Text('Restaurante'),
+
+              Text("Nome: ${r.nome}", style: EstilosApp.texto),
+              Text("Código: ${r.codigo}", style: EstilosApp.texto),
+              Text("Proprietario: ${r.proprietario?.nome}", style: EstilosApp.texto),
+              Text("Tipo: ${r.cutinaria?.nome}", style: EstilosApp.texto)
+
             ],
           ),
         ),
