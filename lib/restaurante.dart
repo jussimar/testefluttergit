@@ -38,5 +38,4 @@ class Restaurante{
       _proprietario = proprietario;
       _cutinaria = cutinaria;
     }
-
 }
